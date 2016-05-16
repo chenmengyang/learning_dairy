@@ -1,3 +1,4 @@
+```sql
 -- This is the note of reading the official tutorial guide mysql-tutorial-5.7
 
 -- display list of options for command line login....
@@ -89,4 +90,4 @@
    
    -- AUTO_INCREMENT as a column opiton
    -- create table test1(id int AUTO_INCREMENT,...);
-   
+   ```
