@@ -1,0 +1,33 @@
+1. Install JDK
+   download from oracle website
+   
+2. Android Studio IDE
+   from official website
+   
+3. AS create project (import existing project)
+
+4. Gradle files: define how to complie your codes, like makefile in c++?
+   Source code files: java codes
+   Resource files: icon, images, UI layout files, xml files...
+   
+5. manifests: 
+   java: source code, test files
+   res: values folder, strings.xml
+
+6. creating new java class
+   right click the package, and new->java class
+
+7. Virtual Machine
+   click AVD manager
+   create a VM, choose the release of phone and version, base on API and ABI(CPU architecture)
+   
+   choose to run the app on phycial device or a emulator (VM)
+   
+8. debugging
+   logging with logcat?
+    by system messages.
+    how to write and read?
+      log level?
+        6 levels: assert, error, warning, info, debug, verbose
+      e.g. Log.v(log_tag,"something is:"+value)
+      
