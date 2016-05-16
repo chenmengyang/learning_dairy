@@ -1,0 +1,52 @@
+
+1. ADT (Abstract data types)
+   Abstraction is the process of abstraction in Java is used to hide certain details and only show the essential features of the object. 
+   
+   A set of data + A set of operations
+   
+   Encapsulation: privite
+   
+   Class: fields + methods (e.g. String)
+   
+   E.g. Vector<E>
+   
+2. Interface
+   An interface is a group of related methods with empty bodies.
+   No implementations, only signatures.
+   Cannot be instantiated, but must be implemented by a class. (class XX implements ii)
+   E.g. Comparable<T> is an interface which be implemented by integer, String and so on.
+   
+3. Package
+   Classes and Interfaces can be group together into packages which provide namespaces.
+   E.g
+   java.lang (Integer, String, Thread)
+   java.util (HashMap, vector, ArrayList)
+   java.io 
+   
+4. Garbage collection
+   C++/C release dynamic memory is very tricky
+   A feature of Java
+
+5. Control
+   if/else
+   iteration: for, while, do..while
+   exception handling: more robust...
+
+6. Inheritance
+   ClassA extends ClassB
+   E.g. AbstractCollection<E>
+        AbstractList<E> extends AbstractCollection<E> implements List<E>
+        ArrayList<E> extends AbstractList<E>
+        Vector<E>    extends AbstractList<E>
+        
+        public class stack<E> extends vector<E>
+        a. inherant all fields and methods
+        b. systematic reuse, push() is implemented by using addElement() in vector
+        c. override...
+        
+7. Polymorphism
+   HashMap : bucket arrays
+   TreeMap : redblack tree
+   
+        
+  
