@@ -31,3 +31,6 @@
         6 levels: assert, error, warning, info, debug, verbose
       e.g. Log.v(log_tag,"something is:"+value)
       
+9. TODO statements
+    a kind of comments, will appear at TODO window
+    
