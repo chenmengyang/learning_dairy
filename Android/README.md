@@ -1,7 +1,7 @@
 ##Some learning notes##
 
 ###1. Declaration###
-  This node is for testing the markdown syntax.
+  This readme.md is for testing the markdown syntax.
 ###2. Link###
   * http://github.com - automatic!
 
