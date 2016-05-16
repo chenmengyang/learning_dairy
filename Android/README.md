@@ -1,11 +1,11 @@
 ##Some learning notes##
 
 ###1. Declaration###
-  This readme.md is for testing the markdown syntax.
+  * This readme.md is for testing the markdown syntax.
   
-  This [video](https://www.youtube.com/watch?v=5fZ9SlUoOqQ) shows how to preview markdown on Atom!
-  
-  ctrl+shift+p type: Markdown Preview: Toggle
+  * This [video](https://www.youtube.com/watch?v=5fZ9SlUoOqQ) shows how to preview markdown on Atom!
+    
+    ctrl+shift+p type: Markdown Preview: Toggle
   
 ###2. Link###
   * http://github.com - automatic!
