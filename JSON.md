@@ -1,6 +1,6 @@
-1. JSON is an easier-to-use alternative to XML.
+#####1. JSON is an easier-to-use alternative to XML.#####
 
-2. JSON use javascript syntax
+#####2. JSON use javascript syntax#####
 ```javascript
 <!DOCTYPE html>
 <html>
@@ -24,17 +24,49 @@ obj.phone;
 </body>
 </html>
 ```
-3. Much like XML, But
 
-  * XML has to be parsed with an XML parser, JSON can be parsed by a standard JavaScript function.
+#####3. Much like XML, But#####
 
-4. Syntax
-  * rules
-    * JSON data in key/value pairs
-    
-    "firstName":"John"
-    
-    * JSON data is seperated by comma
-    * Curly braces contains object
-    * Square brackets contains array
+ * XML has to be parsed with an XML parser, JSON can be parsed by a standard JavaScript function.
+
+#####4. Syntax#####
+ * rules
+   * JSON data in key/value pairs
+     * "firstName":"John"
+   
+   * JSON data is seperated by comma
+   * Curly braces contains object
+     * {"firstName":"John", "lastName":"Doe"}
+   
+   * Square brackets contains array
+     * JSON array can contain multiple objects
+     * E.g.
+     ```JSON
+       "employees":[
+      {"firstName":"John", "lastName":"Doe"}, 
+      {"firstName":"Anna", "lastName":"Smith"}, 
+      {"firstName":"Peter","lastName":"Jones"}
+      ]
+     ```
+  * Using javascript syntax, an array of objects
+  ```javascript
+  var employees = [{"firstname":"Men","lastname":"Young"},{"firstname":"Men","lastname":"Old"},{"firstname":"Men","lastname":"Suck"}];
   
+  employees[0].firstname
+  employees[0]["firstname"]
+  ```
+  
+#####5. Object from string#####
+```javascript
+var text = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+
+var obj = JSON.parse();
+```
+
+#####6. HttpRequest #####
+
+xmlhttp
+
