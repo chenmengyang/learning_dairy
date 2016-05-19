@@ -1,5 +1,5 @@
 create table movies
-(id int
+(id int primary key
 ,title varchar(100)
 ,vote_average decimal(5,2)
 ,release_year smallint
