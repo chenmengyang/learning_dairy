@@ -1,12 +1,13 @@
 # Since I am feeling so bad about using the moviedb API to get data, now we are going to scrape the data from this website: https://www.themoviedb.org/movie
 
 # create table to store the data after scraping
-# How to store the picture in mysql? How to download to 
-# download to local file system first?
-# If only storing the image address, how to program on plane?
+# download images to local file system, separated by id
+
 from bs4 import BeautifulSoup
 import requests
 import MySQLdb
+import os
+import urllib
 
 # connect to db
 db = MySQLdb.connect("localhost", "cmy", "", "moviedb", use_unicode=True, charset='utf8')
@@ -41,7 +42,18 @@ url = "https://www.themoviedb.org/movie?page="
 # but we don't need to get all data now, just first 10 pages maybe enough
 pages = [1,2,3,4,5,6,7,8,9,10]
 
+# set a path on local directory for storing images
+base_path = "/Users/cmy/Documents/web development/MovieSite/movie_img/"
 
+def save_img(img_url, id, path, filename):
+    u = urllib.urlopen(img_url)
+    data = u.read()
+    exists = os.path.exists(path+str(id))
+    if not exists:
+        os.makedirs(path+str(id))
+    f = open(path+str(id)+'/'+filename, "wb")
+    f.write(data)
+    f.close()
 
 def load_movie_data(link, page):
     r = requests.get(link+str(page))
@@ -68,6 +80,10 @@ def load_movie_data(link, page):
         imgs = str(card.find_all("img", {"class": "poster"})[0].get("srcset"))
         img1 = imgs[0:imgs.index(',')].replace(" ", "").replace("1x", "")
         img2 = imgs[imgs.index(',')+1:].replace(" ", "").replace("2x", "")
+
+        # save images to local system
+        save_img(img1, mid, base_path, "1.jpg")
+        save_img(img2, mid, base_path, "2.jpg")
 
         # print mid, title, vote_average, release_date, genres, img1
         insert_sql = "insert into movies(id,title,vote_average,release_year,ranking,genres,overview,poster_adr1,poster_adr2) values(%d,'%s',%.1f,%d,'%s','%s','%s','%s','%s');" % (mid, title, vote_average, release_date, rank, genres, overview, img1, img2)
