@@ -8,6 +8,7 @@
 
   `sql
   select (@i:=@i+1) as rank, t.* from table_name t;
+  
   update table_name t set column_name = (@i:=@i+1);
   `
 
