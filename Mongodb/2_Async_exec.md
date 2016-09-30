@@ -8,3 +8,8 @@ Can not execute a insert base on a query:
        })
    })
 ```
+
+Seems like promise is not work as this, the async operation is not executed
+```javascript
+   Table1.find({}).exec().then(xx=>xx.save(function(){}))
+```
