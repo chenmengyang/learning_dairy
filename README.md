@@ -48,8 +48,8 @@ Content from cell 1 | Content from cell 2
 Content in the first column | Content in the second column
 
 ###8. Username mention###
-@Dingding
-@LingyuZhu
+@dog
+@cat
 
 ###9. Strikethrough and Emoji###
 Any word wrapped with two tildes (like ~~this~~) will appear crossed out.
