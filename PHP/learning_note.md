@@ -10,4 +10,5 @@
 * IO -> fopen + fread + fclose + filesize ..... how to scan a file line by line?
 * Parameters are passed by value by default, add & before parameter enable passing by reference
 * Dynamic function calls are interesting, how about functional programming in PHP?
-* 
+* Regular Expression: [a-Z] match all lower and upper letters.
+* Mysql 
