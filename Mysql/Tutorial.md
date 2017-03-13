@@ -8,6 +8,9 @@
 2. mysql -h hostname -u cmy -p
 -- if server is installed on local computer, don't need -h option
    mysql -u cmy
+   mysql -u root (sometimes we need root privilige to do things, for example:)
+   CREATE USER guest@localhost IDENTIFIED BY 'guest123'; (create a new user)
+   GRANT ALL PRIVILEGES ON *.* TO guest@localhost; (grant priv....)
 
 -- some simple queries
 -- return the version of database, current_date. notice unlike oracle, mysql not need dual table.
