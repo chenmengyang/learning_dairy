@@ -33,6 +33,7 @@
    create table pet(name varchar(20),owner varchar(20),species varchar(20),sex char(1),birth date,death date);
    describe pet;
    insert into pet values('xx','xx','xx','f','1999-12-12','2222-12-12'); --insert
+   insert ignore into shop values('0001','A',3.45); --won't throw error even duplicated
    -- insert is easy, but how to load a file into table???
    -- when using load command, the seperator by default is tab, but you can sepcify a new one, and on OS the terminator should be assign as '\r'
    show warnings; -- when I load the file, some warnings but not showed on the screen, can use this command.
