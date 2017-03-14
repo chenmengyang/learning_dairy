@@ -2,7 +2,7 @@
 
 ### Features?
 * Dynamic typing, $var1 = ...
-* Week type, auto conversion
+* Weak type, auto conversion
 * Case sensitive (except null/NULL and predefined constants)
 * Loop types: for+while+do..while+foreach($array as $element){...}
 * Associative array -> a loopable hashtable
@@ -11,4 +11,6 @@
 * Parameters are passed by value by default, add & before parameter enable passing by reference
 * Dynamic function calls are interesting, how about functional programming in PHP?
 * Regular Expression: [a-Z] match all lower and upper letters.
-* Mysql 
+* Mysql a lot of built-in functions can be called directly
+* OOP class, $this->, new, $instance->memberFunction(para1...), __constructor(arg1...), __destructor(), extends, by default public (can set to private and protected), abstract class, interface, statice, final function cannot be overridden.
+* Functional programming: 
