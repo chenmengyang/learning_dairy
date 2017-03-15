@@ -6,6 +6,10 @@
 * Case sensitive (except null/NULL and predefined constants)
 * Loop types: for+while+do..while+foreach($array as $element){...}
 * Associative array -> a loopable hashtable
+```php
+$date_array = getdate();
+foreach($date_array as $key=>$val){echo "$key is $val \n";};
+```
 * Understand form data, POST + GET easily, how about cross domain?
 * IO -> fopen + fread + fclose + filesize ..... how to scan a file line by line?
 * Parameters are passed by value by default, add & before parameter enable passing by reference
