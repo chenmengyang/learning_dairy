@@ -1,9 +1,11 @@
 let http = require('http');
 let cheerio = require('cheerio');
 let rd=process.argv[2]?process.argv[2]:10;
+let homePage = 'http://www.etuovi.com/?locale=en';
 let baseUrl = `http://www.etuovi.com/homes-for-sale?locale=en&rd=${rd}&page=`;
 let async = require('async');
 let pageArr = [1,2,3,4,5,6,7,8,9,10];
+let pageCount = 10;
 // let pageArr = [0];
 
 // first check how many houses we got from website
@@ -158,41 +160,65 @@ let getFuncArr1 = function(sArr)
 }
 
 // var xxx = getFuncArr(baseUrl,pageArr);
-// console.log("xxx length is "+xxx.length);
-
-// async.parallelLimit(getFuncArr(baseUrl,pageArr), 4,function(err,results){
-//     console.log(results.length);
-// });
 
 async.series([
-    function(){console.log('hello you !!!!! love me');},
-    async.parallelLimit(getFuncArr(baseUrl,pageArr), 4,function(err,results){
-    console.log(results.length);
-    })
-],function(err, results) {});
+    function(callback) {
+        http.get(homePage, (res) => {
+            res.setEncoding('utf8');
+            let rawData = '';
+            res.on('data', (chunk) => rawData += chunk);
+            res.on('end', () => {
+                try
+                {
+                    let htmlCode = rawData;
+                    let $ = cheerio.load(htmlCode);
+                    let count = $('form#searchForm div.submit a.submit em').text().replace(/[^0-9]/g,'');
+                    pageCount = Math.round(count/rd);
+                    callback(null,1);
+                }
+                catch (e)
+                {
+                    console.log(e.message);
+                }
+            });
+        });
+        // setTimeout(function()
+        // {
+        //     console.log("fuck*******************");
+        //     callback(null, 1);
+        // }, 3000);
+    }
+    ,
+    // function(callback) {
+    //     setTimeout(function()
+    //     {
+    //         console.log("you!");
+    //     }, 1000);
+    // }
+    function(callback)
+    {
+        // console.log('pageCount is '+pageCount);
+        let pages = Array.from(Array(pageCount).keys());
+        async.parallelLimit(getFuncArr(baseUrl,pages), 4,function(err,results){
+            console.log(results.length);
+        });
+    }
+],function(err, results) {console.log(results);});
 
-// async.parallel([
-//     function(callback){callback(null,1);},
-//     function(callback){callback(null,1);},
-//     function(callback){callback(null,1);}
-//  ], function(err,results){console.log(results);}
-// );
 
-// async.parallel(
-//     getFuncArr1(sArr),
-// // [
-// //     function(callback) {
-// //         setTimeout(function() {
-// //             callback(null, 'one');
-// //         }, 2000);
-// //     },
-// //     function(callback) {
-// //         setTimeout(function() {
-// //             callback(null, 'two');
-// //         }, 100);
-// //     }
-// // ],
-// // optional callback
-// function(err, results) {
+// async.series({
+//     one: function(callback) {
+//         setTimeout(function() {
+//             console.log("fuck");
+//             callback(null, 1);
+//         }, 2000);
+//     },
+//     two: function(callback){
+//         setTimeout(function() {
+//             console.log("you!");
+//             callback(null, 2);
+//         }, 100);
+//     }
+// }, function(err, results) {
 //     console.log(results);
 // });
