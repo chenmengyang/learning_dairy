@@ -1,6 +1,6 @@
-#####1. JSON is an easier-to-use alternative to XML.#####
+##### 1. JSON is an easier-to-use alternative to XML. #####
 
-#####2. JSON use javascript syntax#####
+##### 2. JSON use javascript syntax #####
 ```javascript
 <!DOCTYPE html>
 <html>
@@ -25,11 +25,11 @@ obj.phone;
 </html>
 ```
 
-#####3. Much like XML, But#####
+##### 3. Much like XML, But #####
 
  * XML has to be parsed with an XML parser, JSON can be parsed by a standard JavaScript function.
 
-#####4. Syntax#####
+##### 4. Syntax #####
  * rules
    * JSON data in key/value pairs
      * "firstName":"John"
@@ -56,7 +56,7 @@ obj.phone;
   employees[0]["firstname"]
   ```
   
-#####5. Object from string#####
+##### 5. Object from string #####
 ```javascript
 var text = '{ "employees" : [' +
 '{ "firstName":"John" , "lastName":"Doe" },' +
@@ -66,7 +66,7 @@ var text = '{ "employees" : [' +
 var obj = JSON.parse();
 ```
 
-#####6. HttpRequest #####
+##### 6. HttpRequest #####
 
 xmlhttp
 
@@ -136,7 +136,7 @@ function myFunction(response) {
 
 ```
 
-#####7. JSON FILE #####
+##### 7. JSON FILE #####
 ```html
 <div id="001"> </div>
 
